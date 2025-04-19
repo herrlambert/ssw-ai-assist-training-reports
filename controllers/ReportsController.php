@@ -34,6 +34,11 @@ class ReportsController {
                     }
                 }
                 fclose($handle);
+                
+                // Sort trainings by ParticipationDate in reverse chronological order
+                usort($trainings, function($a, $b) {
+                    return strtotime($b['ParticipationDate']) - strtotime($a['ParticipationDate']);
+                });
             } else {
                 throw new Exception("Could not open training data file");
             }
@@ -45,4 +50,5 @@ class ReportsController {
         }
     }
 }
+
 

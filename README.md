@@ -10,10 +10,10 @@ Develop a simple reporting web application using AI assistance, built on the LAM
 - **Reporting Capabilities:**
   - Show all trainings and dates for a specific person.
   - Show a list of people who have not taken a specific training within the past 2 years.
-- **Security:** Ensure the application is secure and not vulnerable to any items in the OWASP Top 10.
+- **Security:** Ensure the application is secure and not vulnerable to any items in the [OWASP Top 10](https://owasp.org/www-project-top-ten/).
 - **Responsive UI:** Provide good usability on mobile devices (tablet and phone) as well as computer monitors.
-- **Accessibility:** Meet WCAG 2.0 Level AA accessibility standards.
-- **Branding:** Use the current UW brand color palette, keeping digital accessibility in mind.
+- **Accessibility:** Meet [WCAG 2.0 Level AA accessibility standards](https://uwaterloo.ca/library/aoda-toolkit/wcag-level-aa-requirements).
+- **Branding:** Use the current [UW brand color palette](https://www.washington.edu/brand/brand-elements/colors/#tab-tour-3), keeping digital accessibility in mind.
 
 **AI Assistance Tools:**
 - Microsoft Co-Pilot for AI-assisted project definition and work breakdown.

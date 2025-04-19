@@ -1,32 +1,29 @@
 <?php
-require_once APP_ROOT . '/models/Database.php';
-
 class ReportsController {
-    private $db;
-
-    public function __construct() {
-        $this->db = new Database();
-    }
-
     public function byPerson() {
         try {
-            $query = "SELECT 
-                        TrainingActivityId,
-                        CertificationActivityId,
-                        Title,
-                        ParticipationDate,
-                        FirstName,
-                        LastName,
-                        NewIdentifier
-                    FROM training_activities 
-                    WHERE NewIdentifier = 'sanp'
-                    ORDER BY ParticipationDate DESC";
+            $trainings = [];
+            $csvFile = APP_ROOT . '/utils/data_files/training_activities.csv';
             
-            $trainings = $this->db->query($query);
+            if (($handle = fopen($csvFile, "r")) !== FALSE) {
+                // Skip the header row but store it for column names
+                $headers = fgetcsv($handle);
+                
+                // Read data rows
+                while (($data = fgetcsv($handle)) !== FALSE) {
+                    // Create associative array using headers as keys
+                    $row = array_combine($headers, $data);
+                    
+                    // Filter for records where Identifier = 'sanp'
+                    if ($row['Identifier'] === 'sanp') {
+                        $trainings[] = $row;
+                    }
+                }
+                fclose($handle);
+            }
             
             require_once APP_ROOT . '/views/reports/by_person.php';
         } catch (Exception $e) {
-            // Log error and show user-friendly message
             error_log($e->getMessage());
             echo "An error occurred while retrieving the report.";
         }

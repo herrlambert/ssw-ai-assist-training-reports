@@ -13,32 +13,36 @@
     
     <main class="container">
         <div class="report-container">
-            <table class="report-table">
-                <thead>
-                    <tr>
-                        <th>Training ID</th>
-                        <th>Certification ID</th>
-                        <th>Title</th>
-                        <th>Date</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Identifier</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($trainings as $training): ?>
+            <?php if (!empty($trainings)): ?>
+                <table class="report-table">
+                    <thead>
                         <tr>
-                            <td><?php echo htmlspecialchars($training['TrainingActivityId']); ?></td>
-                            <td><?php echo htmlspecialchars($training['CertificationActivityId']); ?></td>
-                            <td><?php echo htmlspecialchars($training['Title']); ?></td>
-                            <td><?php echo htmlspecialchars($training['ParticipationDate']); ?></td>
-                            <td><?php echo htmlspecialchars($training['FirstName']); ?></td>
-                            <td><?php echo htmlspecialchars($training['LastName']); ?></td>
-                            <td><?php echo htmlspecialchars($training['NewIdentifier']); ?></td>
+                            <th>Training ID</th>
+                            <th>Certification ID</th>
+                            <th>Title</th>
+                            <th>Participation Date</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Identifier</th>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($trainings as $training): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($training['TrainingActivityId']); ?></td>
+                                <td><?php echo htmlspecialchars($training['CertificationActivityId']); ?></td>
+                                <td><?php echo htmlspecialchars($training['Title']); ?></td>
+                                <td><?php echo htmlspecialchars($training['ParticipationDate']); ?></td>
+                                <td><?php echo htmlspecialchars($training['FirstName']); ?></td>
+                                <td><?php echo htmlspecialchars($training['LastName']); ?></td>
+                                <td><?php echo htmlspecialchars($training['Identifier']); ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <p>No training records found.</p>
+            <?php endif; ?>
         </div>
     </main>
 </body>

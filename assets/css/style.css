@@ -87,3 +87,53 @@ body {
     }
 }
 
+/* Add these styles to your existing style.css */
+
+.report-container {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.report-table th,
+.report-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.report-table th {
+    background-color: #4b2e83;
+    color: white;
+    font-weight: bold;
+}
+
+.report-table tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.report-table tr:hover {
+    background-color: #eee;
+}
+
+@media (max-width: 768px) {
+    .report-container {
+        padding: 1rem;
+    }
+    
+    .report-table th,
+    .report-table td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+

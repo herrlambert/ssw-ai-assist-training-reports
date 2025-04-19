@@ -1,10 +1,10 @@
 <?php
 // Database configuration
 define('DB_HOST', 'localhost');
-define('DB_USER', 'your_username');
-define('DB_PASS', 'your_password');
-define('DB_NAME', 'your_database');
+define('DB_USER', 'ssw_training_app');
+define('DB_PASS', 'change_this_password_in_production');
+define('DB_NAME', 'ssw_training_reports');
 
 // Application configuration
-define('BASE_URL', '/');
+define('BASE_URL', '/mattlam/ssw-ai-assist-training-reports');
 define('APP_ROOT', dirname(__DIR__));

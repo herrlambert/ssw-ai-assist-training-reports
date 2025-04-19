@@ -1,7 +1,4 @@
--- Drop the user if it exists (will fail silently if user doesn't exist)
-DROP USER IF EXISTS 'ssw_training_app'@'localhost';
-
--- Create the application user
+-- Create the application user (will fail if exists, that's OK)
 CREATE USER 'ssw_training_app'@'localhost' 
 IDENTIFIED BY 'change_this_password_in_production';
 
@@ -12,3 +9,4 @@ TO 'ssw_training_app'@'localhost';
 
 -- Make sure the privileges are applied
 FLUSH PRIVILEGES;
+

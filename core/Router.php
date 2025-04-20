@@ -7,6 +7,7 @@ class Router {
         // Add routes
         $this->addRoute('/', ['controller' => 'HomeController', 'action' => 'index']);
         $this->addRoute('/reports/by-person', ['controller' => 'ReportsController', 'action' => 'byPerson']);
+        $this->addRoute('/reports/expired', ['controller' => 'ReportsController', 'action' => 'expired']);
     }
 
     public function addRoute($path, $handler) {

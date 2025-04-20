@@ -42,8 +42,14 @@ class ReportsController {
                 }
                 fclose($handle);
                 
-                // Sort trainings by ParticipationDate in reverse chronological order
+                // Sort trainings first by Identifier, then by ParticipationDate in reverse chronological order
                 usort($trainings, function($a, $b) {
+                    // First compare Identifiers
+                    $identifierCompare = strcmp($a['Identifier'], $b['Identifier']);
+                    if ($identifierCompare !== 0) {
+                        return $identifierCompare;
+                    }
+                    // If Identifiers are equal, sort by date in reverse chronological order
                     return strtotime($b['ParticipationDate']) - strtotime($a['ParticipationDate']);
                 });
             } else {
@@ -57,6 +63,7 @@ class ReportsController {
         }
     }
 }
+
 
 
 

@@ -56,7 +56,7 @@
                    name="search" 
                    placeholder="Enter name or identifier..."
                    value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>">
-            <button type="submit">Show Trainings for User</button>
+            <button type="submit">Show Trainings for Person</button>
         </form>
 
         <div class="report-container">
@@ -92,6 +92,7 @@
     </main>
 </body>
 </html>
+
 
 
 

@@ -10,6 +10,7 @@ Develop a simple reporting web application using AI assistance, built on the LAM
 - **Reporting Capabilities:**
   - Show all trainings and dates for a specific person.
   - Show a list of people who have not taken a specific training within the past 2 years.
+- **Coding Standards** PHP code should adhere to standards outlined in [PHP-FIG PSR-1](https://www.php-fig.org/psr/psr-1/) and [PHP-FIG PSR-12](https://www.php-fig.org/psr/psr-12/)
 - **Security:** Ensure the application is secure and not vulnerable to any items in the [OWASP Top 10](https://owasp.org/www-project-top-ten/).
 - **Responsive UI:** Provide good usability on mobile devices (tablet and phone) as well as computer monitors.
 - **Accessibility:** Meet [WCAG 2.0 Level AA accessibility standards](https://uwaterloo.ca/library/aoda-toolkit/wcag-level-aa-requirements).

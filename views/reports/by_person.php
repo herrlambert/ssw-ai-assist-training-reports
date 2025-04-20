@@ -12,6 +12,37 @@
             width: 40%;
             min-width: 300px;
         }
+        
+        /* Search form styles */
+        .search-form {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+        
+        .search-form input[type="text"] {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 300px;
+            margin-right: 1rem;
+        }
+        
+        .search-form button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: #4b2e83;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .search-form button:hover {
+            background-color: #35215d;
+        }
     </style>
 </head>
 <body>
@@ -20,12 +51,23 @@
     </header>
     
     <main class="container">
+        <form class="search-form" method="GET" action="">
+            <input type="text" 
+                   name="search" 
+                   placeholder="Enter name or identifier..."
+                   value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>">
+            <button type="submit">Show Trainings for User</button>
+        </form>
+
         <div class="report-container">
-            <?php if (!empty($trainings)): ?>
+            <?php if (isset($_GET['search']) && empty($trainings)): ?>
+                <p>No training records found for your search.</p>
+            <?php elseif (!isset($_GET['search'])): ?>
+                <p>Please enter a search term to find training records.</p>
+            <?php else: ?>
                 <table class="report-table">
                     <thead>
                         <tr>
-                            <th>Certification ID</th>
                             <th class="title-column">Title</th>
                             <th>Participation Date</th>
                             <th>First Name</th>
@@ -36,7 +78,6 @@
                     <tbody>
                         <?php foreach ($trainings as $training): ?>
                             <tr>
-                                <td><?php echo htmlspecialchars($training['CertificationActivityId']); ?></td>
                                 <td class="title-column"><?php echo htmlspecialchars($training['Title']); ?></td>
                                 <td><?php echo htmlspecialchars($training['ParticipationDate']); ?></td>
                                 <td><?php echo htmlspecialchars($training['FirstName']); ?></td>
@@ -46,12 +87,11 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-            <?php else: ?>
-                <p>No training records found.</p>
             <?php endif; ?>
         </div>
     </main>
 </body>
 </html>
+
 
 

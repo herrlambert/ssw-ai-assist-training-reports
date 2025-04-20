@@ -3,6 +3,7 @@ class ReportsController {
     public function byPerson() {
         try {
             $trainings = [];
+            $searchTerm = isset($_GET['search']) ? trim($_GET['search']) : '';
             $csvFile = APP_ROOT . '/utils/data_files/training_activities.csv';
             
             // Check if file exists and is readable
@@ -28,9 +29,15 @@ class ReportsController {
                     // Create associative array using headers as keys
                     $row = array_combine($headers, $data);
                     
-                    // Filter for records where Identifier = 'sanp'
-                    if ($row['Identifier'] === 'sanp') {
-                        $trainings[] = $row;
+                    // If search term is provided, filter based on it
+                    if (!empty($searchTerm)) {
+                        $searchMatch = stripos($row['FirstName'], $searchTerm) !== false ||
+                                     stripos($row['LastName'], $searchTerm) !== false ||
+                                     stripos($row['Identifier'], $searchTerm) !== false;
+                        
+                        if ($searchMatch) {
+                            $trainings[] = $row;
+                        }
                     }
                 }
                 fclose($handle);
@@ -50,5 +57,6 @@ class ReportsController {
         }
     }
 }
+
 
 

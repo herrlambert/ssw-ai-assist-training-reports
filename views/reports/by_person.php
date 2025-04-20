@@ -43,14 +43,30 @@
         .search-form button:hover {
             background-color: #35215d;
         }
+
+        .nav-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: #4b2e83;
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <header class="banner">
+        <a href="https://www.washington.edu" class="banner-logo">
+            <img src="https://www.washington.edu/brand/files/2014/09/W-Logo_Purple_RGB.png" alt="W Logo">
+            <span class="uw-text">University of Washington</span>
+        </a>
         <h1>Trainings by Person</h1>
     </header>
     
     <main class="container">
+        <a href="/mattlam/ssw-ai-assist-training-reports/" class="nav-link">← Back to Main Page</a>
         <form class="search-form" method="GET" action="">
             <input type="text" 
                    name="search" 
@@ -92,6 +108,8 @@
     </main>
 </body>
 </html>
+
+
 
 
 

@@ -1,6 +1,6 @@
 <?php
 class Message {
     public function getHelloMessage() {
-        return "Hello, World!";
+        return "Guten Tag Welt!";
     }
 }

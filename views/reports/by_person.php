@@ -59,7 +59,7 @@
 <body>
     <header class="banner">
         <a href="https://www.washington.edu" class="banner-logo">
-            <img src="https://www.washington.edu/brand/files/2014/09/W-Logo_Purple_RGB.png" alt="W Logo">
+            <img src="https://www.washington.edu/brand/files/2014/09/W-Logo_White_RGB.png" alt="W Logo">
             <span class="uw-text">University of Washington</span>
         </a>
         <h1>Trainings by Person</h1>
@@ -108,6 +108,7 @@
     </main>
 </body>
 </html>
+
 
 
 
